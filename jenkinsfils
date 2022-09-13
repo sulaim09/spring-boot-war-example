@@ -8,7 +8,7 @@ pipeline {
             steps{
                 // mvn test
                 sh "mvn test"
-                echo 'Hello World'
+                echo "Hello World"
             }
             
         }  
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 // mvn package
                 sh "mvn package"
-                echo 'Hello World'
+                echo "Hello World"
             }
             
         }
@@ -24,7 +24,8 @@ pipeline {
             steps{
                 // Deploy on container -> plugin
                 deploy adapters: [tomcat9(credentialsId: 'mynewtoms', path: '', url: 'http://13.233.6.183:8080')], contextPath: '/app', war: '**/*.war'
-                echo 'Hello World'
+                echo "Hello World"
+
             }
             
         }
@@ -32,7 +33,7 @@ pipeline {
             steps{
                 // Deploy on container -> plugin
                 deploy adapters: [tomcat9(credentialsId: 'mynewtoms', path: '', url: 'http://65.0.135.169:8080')], contextPath: '/app', war: '**/*.war'
-                echo 'Hello World'
+                echo "Hello World"
             }
         }
     }
