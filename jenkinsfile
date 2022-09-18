@@ -3,7 +3,7 @@ pipeline {
      tools { 
         maven "Maven"
     }
-    stages {
+      stages {
         stage('Test'){
             steps{
                 // mvn test
@@ -11,8 +11,8 @@ pipeline {
                 echo 'Hello World'
             }
             
-        }  
-        stage('Build'){
+       }  
+       stage('Build'){
             steps {
                 // mvn package
                 sh 'mvn package'
